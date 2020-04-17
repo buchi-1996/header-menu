@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 100px auto; */
+}
+
+header{
+    background: #aaa;
+    padding: 10px 0 0;
+}
+
+.toggle-btn{
+    display: none;
+}
+
+.toggle-btn .line{
+    width: 20px;
+    height: 3px;
+    background: #333;
+    margin: 3px;
+}
+
+.top-head{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.top-head nav ul li{
+    display: inline-block;
+    list-style: none;
+}
+
+.top-head nav ul li a{
+    text-decoration: none;
+    margin: 0 10px;
+    color: #fff;
+    text-transform: capitalize;
+    transition: .5s;
+}
+
+.top-head nav ul li a:hover{
+    color: #66ccff;
+}
+
+
+.top-head nav ul li .reg{
+    color: #fff;
+}
+
+.top-head nav ul li .reg:hover{
+    color: #fff;
+}
+
+
+@media screen and (max-width: 768px){
+
+    header{
+        background: #55cccc;
+        position: sticky;
+        top: 0;
+    }
+
+
+    
+    .top-head nav ul li{
+        display: block;
+        padding: 10px;
+    }
+
+    .top-head nav{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 2.3rem;
+        left: 0;
+        transform: translateX(-100%);
+        /* transform:  perspective(600px) rotateY(360); */
+        background: linear-gradient(#66ccff, rgba(170, 170, 170, 0.603)), url(../img/post-16.jpg)center/cover no-repeat;
+        transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    .top-head nav.show{
+        transform: translateX(0);
+    }
+
+    .toggle-btn{
+        display: block;
+        margin: 5px 0 0;
+    }
+    
+ .line-1, .line-2, .line-3{
+    transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+ }
+    
+
+    .toggle-btn .line-1.display{
+        transform: rotate(45deg) translate(3px, 5px);
+    }
+    .toggle-btn .line-2.display{
+        opacity: 0;
+    }
+    .toggle-btn .line-3.display{
+        transform: rotate(-45deg) translate(4px, -6px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img-container {
+  position: relative;
+  /* overflow: hidden; */
+  height: 300px;
+  width: 500px;
+  margin: 100px auto;
+}
+
+.img-container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: 0.5rem solid #666f;
+  transform: translate(-3%, -4%);
+  z-index: -1;
+  transition: all 1s ease-in-out;
+}
+
+.img-container:hover::before {
+  transform: translate(0, 0);
+}
+
+.img-container img {
+  height: 300px;
+  width: 500px;
+}
+
+.shop-item {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 100px auto;
+  overflow: hidden;
+  border: 5px solid sienna;
+}
+.shopping-cart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: slateblue;
+  padding: 5px;
+  border-top-left-radius: 9px;
+  z-index: 99;
+  transform: translate(100%, 100%);
+}
+
+.shopping-cart {
+  transition: all 1s ease-in-out;
+}
+
+.shopping-cart:hover {
+  color: #fff;
+}
+
+.shop-item:hover .shopping-cart {
+  transform: translate(5%, 5%);
+}
+
+.shop-item img {
+  transition: all 1s ease-in-out;
+}
+
+.shop-item:hover img {
+  transform: scale(1.2);
+}
+
+.single-card {
+  height: 460px;
+  width: 300px;
+  box-shadow: 0 0 0.5em #aaa;
+}
+.goods {
+  position: relative;
+  height: 460px;
+  width: 300px;
+  /* border: 4px solid #aaa; */
+  overflow: hidden;
+  background-color: goldenrod;
+}
+
+.goods * {
+  transition: all 0.35s ease-in-out;
+}
+.goods img {
+  transition: all 1s ease-in-out;
+}
+
+.goods:hover img {
+  opacity: 0.3;
+  filter: grayscale(100%);
+  background: goldenrod;
+}
+.goods:hover .icon {
+  transform: scale(1.2);
+}
+
+.goods .icon {
+  transform: scale(0);
+  position: absolute;
+  top: 13rem;
+  left: 7.3rem;
+  transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.icon .fa-shopping-cart {
+  background: goldenrod;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 3.3;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.icon h6 {
+  color: #fff;
+}
+
+.price {
+  padding: 9px 0 0;
+  background: goldenrod;
+}
+
+.price h6 {
+  color: rgb(134, 87, 26);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.price p {
+  font-weight: bold;
+  color: rgb(134, 87, 26);
+  font-size: 20px;
+}
